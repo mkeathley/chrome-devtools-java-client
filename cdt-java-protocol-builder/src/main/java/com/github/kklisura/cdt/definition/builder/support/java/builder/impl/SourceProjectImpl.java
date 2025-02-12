@@ -4,14 +4,14 @@ package com.github.kklisura.cdt.definition.builder.support.java.builder.impl;
  * #%L
  * cdt-java-protocol-builder
  * %%
- * Copyright (C) 2018 - 2021 Kenan Klisura
+ * Copyright (C) 2018 - 2025 Kenan Klisura
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,7 +24,8 @@ import static com.github.javaparser.utils.CodeGenerationUtils.packageToPath;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.printer.PrettyPrinter;
-import com.github.javaparser.printer.PrettyPrinterConfiguration;
+import com.github.javaparser.printer.configuration.Indentation;
+import com.github.javaparser.printer.configuration.PrettyPrinterConfiguration;
 import com.github.javaparser.utils.SourceRoot;
 import com.github.kklisura.cdt.definition.builder.support.java.builder.SourceProject;
 import com.google.googlejavaformat.java.Formatter;
@@ -77,7 +78,7 @@ public class SourceProjectImpl implements SourceProject {
   @Override
   public void saveAll() {
     PrettyPrinterConfiguration prettyPrinterConfiguration = new PrettyPrinterConfiguration();
-    prettyPrinterConfiguration.setIndent("\t");
+    prettyPrinterConfiguration.setIndentation(new Indentation(Indentation.IndentType.TABS));
     prettyPrinterConfiguration.setPrintComments(true);
     prettyPrinterConfiguration.setPrintJavadoc(true);
     prettyPrinterConfiguration.setOrderImports(true);

@@ -20,11 +20,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.target>21</maven.compiler.target>
 
-        <logback.version>1.2.3</logback.version>
-        <jackson.version>2.11.3</jackson.version>
-        <common.codec.version>1.11</common.codec.version>
+        <logback.version>1.5.16</logback.version>
+        <jackson.version>2.18.2</jackson.version>
+        <common.codec.version>1.18.0</common.codec.version>
     </properties>
 
     <dependencies>
@@ -65,6 +65,11 @@
             <plugin>
                 <groupId>com.coveo</groupId>
                 <artifactId>fmt-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.18.0</version>
             </plugin>
         </plugins>
     </build>

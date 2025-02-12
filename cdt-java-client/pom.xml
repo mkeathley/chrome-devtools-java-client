@@ -54,29 +54,29 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.target>21</maven.compiler.target>
 
         <project.inceptionYear>2018</project.inceptionYear>
 
-        <jackson.version>2.11.3</jackson.version>
-        <websocket.api.version>1.1</websocket.api.version>
-        <tyrus.version>1.13.1</tyrus.version>
-        <javassist.version>3.24.1-GA</javassist.version>
-        <slf4j.version>1.7.25</slf4j.version>
+        <jackson.version>2.18.2</jackson.version>
+        <websocket.api.version>2.2.0</websocket.api.version>
+        <tyrus.version>2.2.0</tyrus.version>
+        <javassist.version>3.30.2-GA</javassist.version>
+        <slf4j.version>2.1.0-alpha1</slf4j.version>
 
-        <logback.version>1.2.3</logback.version>
-        <junit.version>4.13.1</junit.version>
-        <jacoco.version>0.8.0</jacoco.version>
-        <easy.mock.version>3.4</easy.mock.version>
+        <logback.version>1.5.16</logback.version>
+        <junit.version>4.13.2</junit.version>
+        <jacoco.version>0.8.12</jacoco.version>
+        <easy.mock.version>5.5.0</easy.mock.version>
         <powermock.version>1.6.6</powermock.version>
-        <jsonassert.version>1.5.0</jsonassert.version>
+        <jsonassert.version>2.0-rc1</jsonassert.version>
         <mockwebserver.version>2.7.5</mockwebserver.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
+            <groupId>jakarta.websocket</groupId>
+            <artifactId>jakarta.websocket-api</artifactId>
             <version>${websocket.api.version}</version>
         </dependency>
         <dependency>
@@ -227,7 +227,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.0.1</version>
+                        <version>3.3.1</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -240,7 +240,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.10.1</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -256,7 +256,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>3.2.6</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -341,6 +341,11 @@
                         <phase>process-sources</phase>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.18.0</version>
             </plugin>
         </plugins>
     </build>
